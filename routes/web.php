@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Welcome;
+use App\Http\Controllers\Store;
+use App\Http\Controllers\Products;
+use App\Http\Controllers\About;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[Welcome::class,'index'])->name('welcome');
+
+Route::get('/about',[About::class,'index'])->name ('about');
+
+Route::get('/products',[Products::class,'index'])->name ('products');
+
+Route::get('/store',[Store::class,'index'])->name ('store');
+
+
+
+
+
+
